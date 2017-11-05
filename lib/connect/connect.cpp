@@ -1,21 +1,15 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 
-#include "ssidPass.h"
+#include "../ssidPass/ssidPass.h"
 #include "connect.hpp"
 
-void connect(){
+void connect() {
   Serial.begin(115200);
-  Serial.println();
-  Serial.print("connecting to ");
-  Serial.println(ssid);
-  WiFi.begin(ssid, password);
+  WiFi.begin(SSID, PASS);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
-    Serial.print(".");
+    Serial.println("Waiting for connection");
   }
-  Serial.println("");
-  Serial.println("WiFi connected");
-  Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
 }

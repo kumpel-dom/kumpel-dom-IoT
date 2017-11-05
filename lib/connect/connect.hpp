@@ -1,8 +1,6 @@
-
-#ifndef RECEIVE_H_
-#define RECEIVE_H_
+#ifndef CONNECT_HPP_
+#define CONNECT_HPP_
 
 void connect();
-
 
 #endif 
