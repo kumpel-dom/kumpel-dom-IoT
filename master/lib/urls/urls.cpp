@@ -9,8 +9,8 @@ ESP8266WebServer server(80);
 
 void urls() {
   server.on("/", []() { server.send(200, "text/html", webPage); });
-  server.on("/node", []() {
-    server.send(200, "application/json", "{\"node\": true}");
+  server.on("/led[0-9]", []() {
+    server.send(200, "text/html", webPage);
     Serial.println("led ligado");
     // digitalWrite(gpio0_pin, HIGH);
     delay(1000);
