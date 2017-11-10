@@ -1,5 +1,4 @@
 #include <sstream>
-
 #include "action.h"
 #include "light.h"
 #include "stdbool.h"
@@ -31,13 +30,17 @@ class Light {
     return state;
   }
 
-  string getSync() {
+  string getSync(bool comma) {
     stringstream json;
+    json << "{";
     json << "actionname: " << light->name << ",";
     json << "actionid: " << light->id << ", ";
     json << "type: " << light->type << ", ";
     json << "state: " << light->state << ", ";
-
+    json << "}";
+    if (comma) {
+      json << ",";
+    }
     return json.str();
   }
 }
