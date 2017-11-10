@@ -7,6 +7,7 @@ typedef struct {
   char* state;
   char* type;
   unsigned int id;
+  unsigned int pinOut;
 } action;
 
 int nextid ( ) {

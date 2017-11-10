@@ -2,6 +2,4 @@
 #define LIGHT_H_
 
 
-
-
 #endif 
